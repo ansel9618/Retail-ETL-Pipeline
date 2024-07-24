@@ -1,5 +1,7 @@
 # Retail-ETL-Pipeline
 
+![Architecture](https://github.com/ansel9618/Retail-ETL-Pipeline/blob/main/images/Architecture.png)
+
 * We'll create a airflow dag to load the csv file to google cloud storage efficienty
 * Then we'll have data quality checks using SODA to make sure that the raw data is good and is in 
   proper format
