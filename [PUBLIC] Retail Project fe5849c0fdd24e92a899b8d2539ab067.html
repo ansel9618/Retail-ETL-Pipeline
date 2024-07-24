@@ -1,0 +1,1369 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>[PUBLIC] Retail Project</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fe5849c0-fdd2-4e92-a899-b8d2539ab067" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📹</span></div><h1 class="page-title">[PUBLIC] Retail Project</h1><p class="page-description"></p></header><div class="page-body"><nav id="035b7d95-19d2-4b51-97f7-a61ebdcefdfb" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#98bf5116-0880-483a-91a0-35061b970287">Dataset</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#f806faa2-655b-4192-a831-3deb652f750c">Pipeline</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#78944b80-2b85-4dc7-a5fb-8f23ce89df2c">Data modeling</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9de9de41-1c52-4304-b24a-38bb8a903976">Pipeline</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9e22bb77-3bae-4efd-9ddc-55738c40c0bf">Prerequisites</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2b9cdd4b-fa80-4b3c-a8df-8720f596ec23">Steps</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#daeb44cd-78f3-4cd8-9505-5c9f8afd2dce">Reports</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#627a24e7-5362-46c6-9719-6d05888778f4">Dashboard</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#79fe17d6-a285-4269-a8a4-a18754d392f3"></a></div></nav><p id="31981ee7-2111-4f7b-beef-f0f31e7eccf1" class="">
+</p><h1 id="98bf5116-0880-483a-91a0-35061b970287" class="">Dataset</h1><p id="87a8e794-8d48-47f5-b116-30d291873089" class=""><a href="https://www.kaggle.com/datasets/tunguz/online-retail">https://www.kaggle.com/datasets/tunguz/online-retail</a></p><table id="b7482a16-872b-4c86-b0ff-52491a660f9c" class="simple-table"><tbody><tr id="90deed47-d77a-409f-a548-906dc3b2fc3e"><td id="RLez" class="">Column</td><td id="Wu;o" class="" style="width:549px">Description</td></tr><tr id="64cec9b6-0f14-42d5-a3b9-93fd8081f203"><td id="RLez" class=""><strong>InvoiceNo</strong></td><td id="Wu;o" class="" style="width:549px">Invoice number. Nominal, a 6-digit integral number uniquely assigned to each transaction. If this code starts with letter &#x27;c&#x27;, it indicates a cancellation.</td></tr><tr id="1f77e11b-7cfb-4244-8b6c-98f67f4f8c1e"><td id="RLez" class=""><strong>StockCode</strong></td><td id="Wu;o" class="" style="width:549px">Product (item) code. Nominal, a 5-digit integral number uniquely assigned to each distinct product.</td></tr><tr id="571228dd-4d97-42fc-92a0-3eca01996787"><td id="RLez" class=""><strong>Description</strong></td><td id="Wu;o" class="" style="width:549px">Product (item) name. Nominal.</td></tr><tr id="c3bddd0b-7b19-4b39-8615-8756c2260453"><td id="RLez" class=""><strong>Quantity</strong></td><td id="Wu;o" class="" style="width:549px">The quantities of each product (item) per transaction. Numeric.</td></tr><tr id="e235ae51-e956-4d86-9d41-6c255beb95d6"><td id="RLez" class=""><strong>InvoiceDate</strong></td><td id="Wu;o" class="" style="width:549px">Invice Date and time. Numeric, the day and time when each transaction was generated.</td></tr><tr id="7fc15884-8978-4e17-9092-494b04c8c95c"><td id="RLez" class=""><strong>UnitPrice</strong></td><td id="Wu;o" class="" style="width:549px">Unit price. Numeric, Product price per unit in sterling.</td></tr><tr id="70dff6ef-a209-40ba-8f49-b2890a8d213d"><td id="RLez" class=""><strong>CustomerID</strong></td><td id="Wu;o" class="" style="width:549px">Customer number. Nominal, a 5-digit integral number uniquely assigned to each customer.</td></tr><tr id="5c9fbfa1-6c0b-4978-b7f0-900a9e28cdd9"><td id="RLez" class=""><strong>Country</strong></td><td id="Wu;o" class="" style="width:549px">Country name. Nominal, the name of the country where each customer resides.</td></tr></tbody></table><h1 id="f806faa2-655b-4192-a831-3deb652f750c" class="">Pipeline</h1><div><figure id="34884e97-f899-4219-8383-ed456c2b0181" class="image"><a href="%5BPUBLIC%5D%20Retail%20Project%20fe5849c0fdd24e92a899b8d2539ab067/Screenshot_2023-07-13_at_16.41.19.png"><img style="width:768px" src="%5BPUBLIC%5D%20Retail%20Project%20fe5849c0fdd24e92a899b8d2539ab067/Screenshot_2023-07-13_at_16.41.19.png"/></a></figure></div><h1 id="78944b80-2b85-4dc7-a5fb-8f23ce89df2c" class="">Data modeling</h1><figure id="a4780609-7e57-4a2a-88d9-817e949c85a8" class="image"><a href="%5BPUBLIC%5D%20Retail%20Project%20fe5849c0fdd24e92a899b8d2539ab067/Screenshot_2023-07-13_at_16.59.35.png"><img style="width:1436px" src="%5BPUBLIC%5D%20Retail%20Project%20fe5849c0fdd24e92a899b8d2539ab067/Screenshot_2023-07-13_at_16.59.35.png"/></a></figure><h1 id="9de9de41-1c52-4304-b24a-38bb8a903976" class="">Pipeline</h1><h2 id="9e22bb77-3bae-4efd-9ddc-55738c40c0bf" class="">Prerequisites</h2><ul id="8685f9df-b524-4832-9975-fce10b69e92d" class="bulleted-list"><li style="list-style-type:disc">Docker</li></ul><ul id="f3613a24-1216-44ba-8060-81a0c02de413" class="bulleted-list"><li style="list-style-type:disc">Astro CLI</li></ul><ul id="7127570d-366a-415f-8200-5bf472db1840" class="bulleted-list"><li style="list-style-type:disc">Soda</li></ul><ul id="97714c35-c105-4ad5-aeab-fb1a21156a83" class="bulleted-list"><li style="list-style-type:disc">GC account</li></ul><h2 id="2b9cdd4b-fa80-4b3c-a8df-8720f596ec23" class="">Steps</h2><hr id="cfd01187-454c-42ba-9313-c91ad534eda1"/><p id="cc8803b1-065a-4beb-a467-9588d937ca04" class=""><strong>IMPORTANT!</strong></p><p id="0ccfc1c5-ac2c-435a-be4f-46b2f0858f81" class=""><strong><br/>Open the Dockerfile and make sure you use <br/></strong><strong><a href="https://www.youtube.com/redirect?event=comments&amp;redir_token=QUFFLUhqbmNvZnZoRXA5bXpQOTNXSjJFZ0N4TUNlZTZjQXxBQ3Jtc0ttOUw0YlNjX0w4N2xOSGg1dEF5Tzc3YU9KTm9HalozVmtsUmpmMkd4MnBhSnpkNVRQdGJsZzZpNjlZWHdRNkFKM1BMWl9zTW1TSGNUbGV5QW1zU2UybURaMHN0SUs5cnpGaFVTQkJTdUp5LVNzUWIycw&amp;q=http%3A%2F%2Fquay.io%2Fastronomer%2Fastro-runtime%3A8.8.0&amp;stzid=UgwO3rRwDpXPy4ZgDbt4AaABAg">quay.io/astronomer/astro-runtime:8.8.0</a></strong><strong> in the Dockerfile (or airflow 2.6.1), If not, use that version and restart Airflow (astro dev restart with the Astro CLI)</strong></p><hr id="5c386128-3e8d-40ff-a5c1-7951f91ba63d"/><ul id="3a78ef76-ca65-4b2e-b74d-56b7b1b1b8cc" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Download the dataset <a href="https://www.kaggle.com/datasets/tunguz/online-retail">https://www.kaggle.com/datasets/tunguz/online-retail</a></span><div class="indented"><ul id="37c6aff9-aa8f-4ba5-b822-e3c7991ba400" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Store the csv file in <code>include/dataset/online_retail.csv</code></span><div class="indented"></div></li></ul></div></li></ul><ul id="b9b52c0f-d064-412a-878f-add8091e70a5" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In requirements.txt, add <code>apache-airflow-providers-google==10.3.0</code> restart Airflow.</span><div class="indented"></div></li></ul><ul id="fd79bdc8-7988-4a6f-9f86-1d39accf79d7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create a GCS bucket with a unique name <code>&lt;your_name&gt;_online_retail</code></span><div class="indented"></div></li></ul><ul id="1729e7b1-aec4-4630-ac02-356baf6b0294" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create a service account with a name <code>airflow-online-retail</code></span><div class="indented"><ul id="b75a0958-80fb-4d40-9b91-300d5a47b5cf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Grant admin access to GCS + BigQuery</span><div class="indented"></div></li></ul><ul id="ca96db5d-7708-41dc-8b69-75cf6948fc84" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Click on the service account → Keys → Add Key → Copy the JSON content</span><div class="indented"></div></li></ul><ul id="cb3d55fe-406d-4078-8575-66d6b8923df2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create a new file <code>service_account.json</code> in <code>include/gcp/</code></span><div class="indented"></div></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1378afa4-1673-4766-a6a9-7100788391aa" class="code"><code class="language-JSON"># include/gcp/service_account.json
+
+{
+    &quot;type&quot;: &quot;service_account&quot;,
+    &quot;project_id&quot;: &quot;airtube-390719&quot;,
+    &quot;private_key_id&quot;: &quot;58cfee8a937e7bfc66ae6465a848db53cf4fb919&quot;,
+    &quot;private_key&quot;: &quot;-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCs1DzaHpGl7zcw\nD/Ab2VDs1YxKK7rnT8Oi+pJwxomLGEg15q2mgbS8tebrs65lC8Ihzs3SGfaBycWK\nlMqOLP95gTnsYgMpveoCv/L9OU8UiYTbPdJEk7YxJi0u7jYl0BD2WJ5NnpUdBFYH\nEzAs9X5/3sHRqQItLtxMVEQ5kG4Q0kPeGFGMhABksuBkZ8EtwdVxsNQFUk9GAdJb\nWLa6Co3DraFd3A3QXCfO8HHmdR4YxqX6MKOpAipDied6PYUhf+uZoW9FFXg4VLSz\n0INYkmIhxmv+3jNcHS0wCUFS/GunRzvk9gh61HpF6KvM4OBuRSKLWt1Jezsww4hl\nQbJYOnbTAgMBAAECggEAJ6IgNlDuS6Q4/q+Y+3nxge5S1quCmAsFrTlTHcOZxSkT\nXjEBP37dKK16QDEbXBa/NSuMrZLAofDYeTg33zTYfU+yLdAoM4lWwbytB3798JK8\nwd5CevF4xXqgv/NmvXMigKu/2cL1JQtagxLWaGj/0mkN/3uHgT8Oy/5DCwRhCUAe\nIFtpzCLp4fFrkpRcXXcKKL7zsxt9x4ya0qiYA/q1p7y4zl3734ZxGw48MPVeLGSE\ne46cVMBBlDYgdsnwLJA7IexbIrg5viw4m7HG9QMUaoU1vb7xgQSEX0VM+4z3mznH\nYEJ6CAYlEDmcqAegTNayyMRFWej6ZdbgN7h+ju0uoQKBgQDf9Q8eIaM6TDlOJBrX\nBhv8eIraaGbP6EBFbc8m7jp8JwtuHrdcPzxH5euxwRWnpF8HzH7ea7+EXKvRhuTf\n5y5+biMquK5USGEp1pN/ehaOpXjgMvNZ9qRTVPWjgKM4hjER12xSuVEjqFP3yTG6\nqZyGqu/ylVC8glJp1Zdm1atvowKBgQDFjn4REXBVdDajED/ZydYPNllBi6CegNJs\nshDDlgIElyjKn7pqgrEK3F+sJSRWHJni9Z4mRjokgW/H4us9Bh6rzOEqJRZOs8WS\ndnNBp24W8iprBj8K7l8xCbzTRqwz0wgM0oS/irILGUSyn6ye9I65WqaZ28xCTMhm\nNkKSYVSPEQKBgQDc25j7CAUmmsDwlJ57aqTyyBV26fpqEgo/7diZ9dlrUj3tbRE6\nQYo7BTz4YQfv+SNWV47N3chSyekPik3vmNa7C/ZWTSZuK6rWTavLzSStq/WWc+iU\n0aygGWrcwSE1vvBpPd6vfd3MolWcSKdoA5g/HhffTOz/2i1X/bF/UjvsrQKBgQCr\nr9EZjjk82pldDxMed40jfU0GbIzzEutMcVemUmiAisl1hmjghaHM2YX/ueuhNov6\nNRDzHFcNQLvfT/K1/uqKzavlD4Qac5tBVNWHejVvlZeNmUkSe+SYXmkOh73B8CVv\n10hsmeFvSc9tGN1Q6yJaLVDaJ62U9Nu4EHG8ev+csQKBgCI8ivxrXdn0NwTThb2j\nHfw0CNAHNl1c2ml7lhmSE+pF5uIxlVHwETP7gz2+hSd85AqxG6+mkHZhu4kzwcGh\niI0iIMYARP9Al9SC1dgMjQz28VEctBRs3aiDUPKBkFESig7ZHhy6cxGUkZZdUpKZ\n6jaiEqIIqBLNAATTx+AO/b+R\n-----END PRIVATE KEY-----\n&quot;,
+    &quot;client_email&quot;: &quot;airflow-online-retail@airtube-390719.iam.gserviceaccount.com&quot;,
+    &quot;client_id&quot;: &quot;117189738213106346790&quot;,
+    &quot;auth_uri&quot;: &quot;https://accounts.google.com/o/oauth2/auth&quot;,
+    &quot;token_uri&quot;: &quot;https://oauth2.googleapis.com/token&quot;,
+    &quot;auth_provider_x509_cert_url&quot;: &quot;https://www.googleapis.com/oauth2/v1/certs&quot;,
+    &quot;client_x509_cert_url&quot;: &quot;https://www.googleapis.com/robot/v1/metadata/x509/airflow-online-retail%40airtube-390719.iam.gserviceaccount.com&quot;,
+    &quot;universe_domain&quot;: &quot;googleapis.com&quot;
+}service_accountservice_account</code></pre><ul id="ed5c732e-0c85-4380-9ee9-103e8cf20bdb" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Airflow → Admin → Connections</span><div class="indented"><ul id="47460294-ec19-4d49-a073-aceb967a4696" class="bulleted-list"><li style="list-style-type:disc">id: gcp</li></ul><ul id="b2454d52-e238-42ed-a03e-16033395d449" class="bulleted-list"><li style="list-style-type:disc">type: Google Cloud</li></ul><ul id="f5929400-6ce1-4920-a3ed-66d700ce147a" class="bulleted-list"><li style="list-style-type:disc">Keypath Path: <code>/usr/local/airflow/include/gcp/service_account.json</code></li></ul></div></li></ul><ul id="d1ee7a6a-cc56-41a6-bc2b-ae42b4f79a41" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Test the connection → Save (<strong>from 2.7 must be turned on</strong>)</span><div class="indented"></div></li></ul></div></li></ul><ul id="c991260a-8187-4fd4-8908-c898ce974d60" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create the DAG</span><div class="indented"></div></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a0bcccf3-42ef-48bd-8269-f0e0bd68e229" class="code"><code class="language-Python"># retail.py
+
+from airflow.decorators import dag, task
+from datetime import datetime
+
+from airflow.providers.google.cloud.transfers.local_to_gcs import LocalFilesystemToGCSOperator
+
+@dag(
+    start_date=datetime(2023, 1, 1),
+    schedule=None,
+    catchup=False,
+    tags=[&#x27;retail&#x27;],
+)
+def retail():
+
+    upload_csv_to_gcs = LocalFilesystemToGCSOperator(
+        task_id=&#x27;upload_csv_to_gcs&#x27;,
+        src=&#x27;include/dataset/online_retail.csv&#x27;,
+        dst=&#x27;raw/online_retail.csv&#x27;,
+        bucket=&#x27;marclamberti_online_retail&#x27;,
+        gcp_conn_id=&#x27;gcp&#x27;,
+        mime_type=&#x27;text/csv&#x27;,
+    )
+
+retail()</code></pre><ul id="b90c3e4e-31a8-4f34-93f0-02919d341765" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Test the task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8a283d2a-3dcc-45b6-b104-9dd769aa0eb8" class="code"><code class="language-Bash">astro dev bash
+airflow tasks test retail upload_csv_to_gcs 2023-01-01</code></pre></div></li></ul><ul id="b2a55170-a492-41f5-b34d-8ab9f96d2b67" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create an empty Dataset (schema equivalent)</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e6dfb1a3-ec75-49d2-9e11-424b692e01e8" class="code"><code class="language-Python">from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateEmptyDatasetOperator
+
+create_retail_dataset = BigQueryCreateEmptyDatasetOperator(
+        task_id=&#x27;create_retail_dataset&#x27;,
+        dataset_id=&#x27;retail&#x27;,
+        gcp_conn_id=&#x27;gcp&#x27;,
+    )</code></pre></div></li></ul><ul id="28a4478c-b31a-40ba-a218-d3fc5af70c33" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create the task to load the file into a BigQuery <code>raw_invoices</code> table</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fe8524f2-3a6b-4ad4-80ce-ccbc2ec3a763" class="code"><code class="language-Python">from astro import sql as aql
+from astro.files import File
+from astro.sql.table import Table, Metadata
+from astro.constants import FileType
+
+gcs_to_raw = aql.load_file(
+        task_id=&#x27;gcs_to_raw&#x27;,
+        input_file=File(
+            &#x27;gs://marclamberti_online_retail/raw/online_retail.csv&#x27;,
+            conn_id=&#x27;gcp&#x27;,
+            filetype=FileType.CSV,
+        ),
+        output_table=Table(
+            name=&#x27;raw_invoices&#x27;,
+            conn_id=&#x27;gcp&#x27;,
+            metadata=Metadata(schema=&#x27;retail&#x27;)
+        ),
+        use_native_support=False,
+    )</code></pre></div></li></ul><p id="54e94c10-da10-44cf-895f-dea95f28b52e" class=""><strong>🏆 Data loaded into the warehouse!</strong></p><p id="a46d1f95-dc96-4306-8b77-2e56a18db566" class="">
+</p><ul id="fbe6cb60-a8d1-4d4a-9963-fcc3919f7875" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Install Soda Core</span><div class="indented"><ul id="685af437-5ba3-418c-b189-2da09e462d20" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In requirements.txt</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="d404d261-f910-4d92-9b9d-48ebc6c4a306" class="code"><code class="language-Bash">soda-core-bigquery==3.0.45</code></pre></div></li></ul><ul id="82d7c1dd-4851-4dae-b60b-50e3be1e5f89" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create a <code>configuration.yml</code></span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a190463b-0338-47a3-92a5-a1ec14fd21f7" class="code"><code class="language-YAML">-- include/soda/configuration.yml
+data_source retail:
+  type: bigquery
+  connection:
+    account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
+    auth_scopes:
+    - https://www.googleapis.com/auth/bigquery
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/drive
+    project_id: &#x27;airtube-390719&#x27;
+    dataset: retail</code></pre><p id="931a0c23-4dc4-4f9f-955c-b28c7980450a" class="">project_id is found in GCP</p></div></li></ul><ul id="b7218bf8-0897-476a-a6fb-5615f689557f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create a Soda Cloud account</span><div class="indented"></div></li></ul><ul id="aef3f24e-d18a-4f55-9b57-48ab0970e70e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create an API → Profile → API Keys → Create API → Copy API in <code>configuration.yml</code></span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9893aab5-f53e-448c-b18d-6d6fce12f33c" class="code"><code class="language-YAML">data_source retail:
+  type: bigquery
+  connection:
+    account_info_json_path: /usr/local/airflow/include/gcp/service_account.json
+    auth_scopes:
+    - https://www.googleapis.com/auth/bigquery
+    - https://www.googleapis.com/auth/cloud-platform
+    - https://www.googleapis.com/auth/drive
+    project_id: &#x27;airtube-390719&#x27;
+    dataset: retail
+soda_cloud:
+  host: cloud.soda.io
+  api_key_id: ec1bd081-1cfc-4037-93cc-d2ba94de930c
+  api_key_secret: CcCCtCBhMIdju4VLKovy6Tha8by7sm7AD4woIW5tlwJvI57Dt0H1sQ</code></pre></div></li></ul><ul id="6244d94d-b24c-4b66-b52e-aebe04b82a6e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Test the connection</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="29d463b8-0fa9-4575-bba7-1109f8ed047d" class="code"><code class="language-Bash">astro dev bash
+soda test-connection -d retail -c include/soda/configuration.yml</code></pre></div></li></ul><ul id="541e2de5-38d1-41e5-93ad-63e0e936a9f6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create the first test for <code>include/soda/checks/sources/raw_invoices.yml</code></span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c22c203f-266d-4b8e-a514-3fa4df5d5280" class="code"><code class="language-YAML">checks for raw_invoices:
+  - schema:
+      fail:
+        when required column missing: [InvoiceNo, StockCode, Quantity, InvoiceDate, UnitPrice, CustomerID, Country]
+        when wrong column type:
+          InvoiceNo: string
+          StockCode: string
+          Quantity: integer
+          InvoiceDate: string
+          UnitPrice: float64
+          CustomerID: float64
+          Country: string</code></pre></div></li></ul><ul id="9af4333b-9ba1-4031-bb60-a7409517be53" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Run the quality check</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="67b4edae-8220-483c-b4eb-b01e3d506f11" class="code"><code class="language-YAML">soda scan -d retail -c include/soda/configuration.yml include/soda/checks/sources/raw_invoices.yml</code></pre></div></li></ul><ul id="5e6f14c1-c3d2-465f-980d-ddf285790e76" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create the check function</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c7354071-1ba5-4698-9fcb-48c2dd0a0371" class="code"><code class="language-Python"># include/soda/check_function.py
+def check(scan_name, checks_subpath=None, data_source=&#x27;retail&#x27;, project_root=&#x27;include&#x27;):
+    from soda.scan import Scan
+
+    print(&#x27;Running Soda Scan ...&#x27;)
+    config_file = f&#x27;{project_root}/soda/configuration.yml&#x27;
+    checks_path = f&#x27;{project_root}/soda/checks&#x27;
+
+    if checks_subpath:
+        checks_path += f&#x27;/{checks_subpath}&#x27;
+
+    scan = Scan()
+    scan.set_verbose()
+    scan.add_configuration_yaml_file(config_file)
+    scan.set_data_source_name(data_source)
+    scan.add_sodacl_yaml_files(checks_path)
+    scan.set_scan_definition_name(scan_name)
+
+    result = scan.execute()
+    print(scan.get_logs_text())
+
+    if result != 0:
+        raise ValueError(&#x27;Soda Scan failed&#x27;)
+
+    return result</code></pre></div></li></ul><ul id="140d3ab2-e7fd-45e2-b0a3-ed92081afbaf" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create the python virtual env</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="7cccff6f-60f9-4630-8206-66661724cf92" class="code"><code class="language-Docker"># install soda into a virtual environment
+RUN python -m venv soda_venv &amp;&amp; source soda_venv/bin/activate &amp;&amp; \
+    pip install --no-cache-dir soda-core-bigquery==3.0.45 &amp;&amp;\
+    pip install --no-cache-dir soda-core-scientific==3.0.45 &amp;&amp; deactivate</code></pre></div></li></ul><ul id="1c261c49-c80e-4488-bf47-0f06c13d1604" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In the DAG, create a new task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="35d9ae39-b455-4e5b-a0cf-782fe7785901" class="code"><code class="language-Python">@task.external_python(python=&#x27;/usr/local/airflow/soda_venv/bin/python&#x27;)
+    def check_load(scan_name=&#x27;check_load&#x27;, checks_subpath=&#x27;sources&#x27;):
+        from include.soda.check_function import check
+
+        return check(scan_name, checks_subpath)</code></pre><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="efc1df15-7679-4e4c-a06b-5c809859b972"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">ExternalPython uses an existing python virtual environment with dependencies pre-installed. That makes it faster to run than the VirtualPython where dependencies are installed at each run</div></figure></div></li></ul><ul id="0cbd4119-9cb6-414d-b695-a0078d2fd968" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Test the task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fbfdb450-9621-4653-851e-2a57d5a2308f" class="code"><code class="language-Python">astro dev bash
+airflow tasks test retail check_load 2023-01-01</code></pre></div></li></ul><p id="f25385a5-f206-4c59-924f-9fcea9fb4860" class=""><strong>🏆 First data quality check in place!</strong></p><p id="f11b3b51-7809-4da0-85a3-122bbb7f3736" class="">
+</p><h3 id="a0ff8350-eeab-4b57-ab2d-574f1776f1d8" class="">Transform</h3><p id="014636b5-c2a9-4b6e-936d-a3fea280e34e" class="">
+</p><ul id="9b171d5c-2c29-4948-a76a-ede0b2c8a47f" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Install Cosmos - DBT</span><div class="indented"><ul id="155a2c4d-d285-490a-923d-6fb00f113c52" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In requirements.txt</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="de7989c3-2ea1-4874-b05d-afe18d4e5f4d" class="code"><code class="language-JavaScript">// REMOVE apache-airflow-providers-google==10.3.0
+// REMOVE soda-core-bigquery==3.0.45
+astronomer-cosmos[dbt-bigquery]==1.0.3 // install google + cosmos + dbt
+protobuf==3.20.0</code></pre></div></li></ul><ul id="144f0c8a-2a76-4b20-8d78-bd19e352e8db" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In env (required because of conflicts)</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a7d03a24-5cd2-4476-911e-1720d9c86e11" class="code"><code class="language-Python">PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python</code></pre></div></li></ul><ul id="f4b76a3c-cb09-446d-b5b2-219a81a7b0bd" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In Dockerfile</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="93cd31ef-0bb2-4301-9558-4c7d405191f1" class="code"><code class="language-Docker"># install dbt into a virtual environment
+RUN python -m venv dbt_venv &amp;&amp; source dbt_venv/bin/activate &amp;&amp; \
+    pip install --no-cache-dir dbt-bigquery==1.5.3 &amp;&amp; deactivate</code></pre></div></li></ul><ul id="95ed7817-9ff5-4d70-9856-9de422343ae3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Restart</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="230f41f7-3ed0-410d-9514-d9503e0bfd1a" class="code"><code class="language-Python">astro dev restart</code></pre></div></li></ul></div></li></ul><ul id="66bf8c5e-cf91-421f-910a-86c3bfc024a2" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create <code>include/dbt</code></span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="dacf1ba1-e9bb-4813-8ea0-969d7b119a4a" class="code"><code class="language-YAML"># packages.yml
+packages:
+  - package: dbt-labs/dbt_utils
+    version: 1.1.1</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="18855248-c0a1-4cf6-9cd7-d0c5ea9142ff" class="code"><code class="language-YAML"># dbt_project.yml
+
+name: &#x27;retail&#x27;
+
+profile: &#x27;retail&#x27;
+
+models:
+  retail:
+    materialized: table</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="c4fc25ac-7359-454a-8c04-9147f9458961" class="code"><code class="language-YAML"># profiles.yml
+
+retail:
+ target: dev
+ outputs:
+  dev:
+    type: bigquery
+    method: service-account
+    keyfile: /usr/local/airflow/include/gcp/service_account.json
+    project: airtube-390719
+    dataset: retail
+    threads: 1
+    timeout_seconds: 300
+    location: US</code></pre><ul id="3d540ecf-2068-4b13-a28a-d1b153b10c92" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Go to BigQuery</span><div class="indented"></div></li></ul><ul id="33e5ae59-fde7-4d91-a37a-922323006875" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Execute the following SQL request</span><div class="indented"></div></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="93c7b81d-8af5-4165-945e-af40f49c204b" class="code"><code class="language-SQL" style="white-space:pre-wrap;word-break:break-all">CREATE TABLE IF NOT EXISTS `retail.country` (
+  `id` INT NOT NULL,
+  `iso` STRING NOT NULL,
+  `name` STRING NOT NULL,
+  `nicename` STRING NOT NULL,
+  `iso3` STRING DEFAULT NULL,
+  `numcode` INT DEFAULT NULL,
+  `phonecode` INT NOT NULL,
+);
+
+--
+-- Dumping data for table `country`
+--
+
+INSERT INTO `retail.country` (`id`, `iso`, `name`, `nicename`, `iso3`, `numcode`, `phonecode`) VALUES
+(1, &#x27;AF&#x27;, &#x27;AFGHANISTAN&#x27;, &#x27;Afghanistan&#x27;, &#x27;AFG&#x27;, 4, 93),
+(2, &#x27;AL&#x27;, &#x27;ALBANIA&#x27;, &#x27;Albania&#x27;, &#x27;ALB&#x27;, 8, 355),
+(3, &#x27;DZ&#x27;, &#x27;ALGERIA&#x27;, &#x27;Algeria&#x27;, &#x27;DZA&#x27;, 12, 213),
+(4, &#x27;AS&#x27;, &#x27;AMERICAN SAMOA&#x27;, &#x27;American Samoa&#x27;, &#x27;ASM&#x27;, 16, 1684),
+(5, &#x27;AD&#x27;, &#x27;ANDORRA&#x27;, &#x27;Andorra&#x27;, &#x27;AND&#x27;, 20, 376),
+(6, &#x27;AO&#x27;, &#x27;ANGOLA&#x27;, &#x27;Angola&#x27;, &#x27;AGO&#x27;, 24, 244),
+(7, &#x27;AI&#x27;, &#x27;ANGUILLA&#x27;, &#x27;Anguilla&#x27;, &#x27;AIA&#x27;, 660, 1264),
+(8, &#x27;AQ&#x27;, &#x27;ANTARCTICA&#x27;, &#x27;Antarctica&#x27;, NULL, NULL, 0),
+(9, &#x27;AG&#x27;, &#x27;ANTIGUA AND BARBUDA&#x27;, &#x27;Antigua and Barbuda&#x27;, &#x27;ATG&#x27;, 28, 1268),
+(10, &#x27;AR&#x27;, &#x27;ARGENTINA&#x27;, &#x27;Argentina&#x27;, &#x27;ARG&#x27;, 32, 54),
+(11, &#x27;AM&#x27;, &#x27;ARMENIA&#x27;, &#x27;Armenia&#x27;, &#x27;ARM&#x27;, 51, 374),
+(12, &#x27;AW&#x27;, &#x27;ARUBA&#x27;, &#x27;Aruba&#x27;, &#x27;ABW&#x27;, 533, 297),
+(13, &#x27;AU&#x27;, &#x27;AUSTRALIA&#x27;, &#x27;Australia&#x27;, &#x27;AUS&#x27;, 36, 61),
+(14, &#x27;AT&#x27;, &#x27;AUSTRIA&#x27;, &#x27;Austria&#x27;, &#x27;AUT&#x27;, 40, 43),
+(15, &#x27;AZ&#x27;, &#x27;AZERBAIJAN&#x27;, &#x27;Azerbaijan&#x27;, &#x27;AZE&#x27;, 31, 994),
+(16, &#x27;BS&#x27;, &#x27;BAHAMAS&#x27;, &#x27;Bahamas&#x27;, &#x27;BHS&#x27;, 44, 1242),
+(17, &#x27;BH&#x27;, &#x27;BAHRAIN&#x27;, &#x27;Bahrain&#x27;, &#x27;BHR&#x27;, 48, 973),
+(18, &#x27;BD&#x27;, &#x27;BANGLADESH&#x27;, &#x27;Bangladesh&#x27;, &#x27;BGD&#x27;, 50, 880),
+(19, &#x27;BB&#x27;, &#x27;BARBADOS&#x27;, &#x27;Barbados&#x27;, &#x27;BRB&#x27;, 52, 1246),
+(20, &#x27;BY&#x27;, &#x27;BELARUS&#x27;, &#x27;Belarus&#x27;, &#x27;BLR&#x27;, 112, 375),
+(21, &#x27;BE&#x27;, &#x27;BELGIUM&#x27;, &#x27;Belgium&#x27;, &#x27;BEL&#x27;, 56, 32),
+(22, &#x27;BZ&#x27;, &#x27;BELIZE&#x27;, &#x27;Belize&#x27;, &#x27;BLZ&#x27;, 84, 501),
+(23, &#x27;BJ&#x27;, &#x27;BENIN&#x27;, &#x27;Benin&#x27;, &#x27;BEN&#x27;, 204, 229),
+(24, &#x27;BM&#x27;, &#x27;BERMUDA&#x27;, &#x27;Bermuda&#x27;, &#x27;BMU&#x27;, 60, 1441),
+(25, &#x27;BT&#x27;, &#x27;BHUTAN&#x27;, &#x27;Bhutan&#x27;, &#x27;BTN&#x27;, 64, 975),
+(26, &#x27;BO&#x27;, &#x27;BOLIVIA&#x27;, &#x27;Bolivia&#x27;, &#x27;BOL&#x27;, 68, 591),
+(27, &#x27;BA&#x27;, &#x27;BOSNIA AND HERZEGOVINA&#x27;, &#x27;Bosnia and Herzegovina&#x27;, &#x27;BIH&#x27;, 70, 387),
+(28, &#x27;BW&#x27;, &#x27;BOTSWANA&#x27;, &#x27;Botswana&#x27;, &#x27;BWA&#x27;, 72, 267),
+(29, &#x27;BV&#x27;, &#x27;BOUVET ISLAND&#x27;, &#x27;Bouvet Island&#x27;, NULL, NULL, 0),
+(30, &#x27;BR&#x27;, &#x27;BRAZIL&#x27;, &#x27;Brazil&#x27;, &#x27;BRA&#x27;, 76, 55),
+(31, &#x27;IO&#x27;, &#x27;BRITISH INDIAN OCEAN TERRITORY&#x27;, &#x27;British Indian Ocean Territory&#x27;, NULL, NULL, 246),
+(32, &#x27;BN&#x27;, &#x27;BRUNEI DARUSSALAM&#x27;, &#x27;Brunei Darussalam&#x27;, &#x27;BRN&#x27;, 96, 673),
+(33, &#x27;BG&#x27;, &#x27;BULGARIA&#x27;, &#x27;Bulgaria&#x27;, &#x27;BGR&#x27;, 100, 359),
+(34, &#x27;BF&#x27;, &#x27;BURKINA FASO&#x27;, &#x27;Burkina Faso&#x27;, &#x27;BFA&#x27;, 854, 226),
+(35, &#x27;BI&#x27;, &#x27;BURUNDI&#x27;, &#x27;Burundi&#x27;, &#x27;BDI&#x27;, 108, 257),
+(36, &#x27;KH&#x27;, &#x27;CAMBODIA&#x27;, &#x27;Cambodia&#x27;, &#x27;KHM&#x27;, 116, 855),
+(37, &#x27;CM&#x27;, &#x27;CAMEROON&#x27;, &#x27;Cameroon&#x27;, &#x27;CMR&#x27;, 120, 237),
+(38, &#x27;CA&#x27;, &#x27;CANADA&#x27;, &#x27;Canada&#x27;, &#x27;CAN&#x27;, 124, 1),
+(39, &#x27;CV&#x27;, &#x27;CAPE VERDE&#x27;, &#x27;Cape Verde&#x27;, &#x27;CPV&#x27;, 132, 238),
+(40, &#x27;KY&#x27;, &#x27;CAYMAN ISLANDS&#x27;, &#x27;Cayman Islands&#x27;, &#x27;CYM&#x27;, 136, 1345),
+(41, &#x27;CF&#x27;, &#x27;CENTRAL AFRICAN REPUBLIC&#x27;, &#x27;Central African Republic&#x27;, &#x27;CAF&#x27;, 140, 236),
+(42, &#x27;TD&#x27;, &#x27;CHAD&#x27;, &#x27;Chad&#x27;, &#x27;TCD&#x27;, 148, 235),
+(43, &#x27;CL&#x27;, &#x27;CHILE&#x27;, &#x27;Chile&#x27;, &#x27;CHL&#x27;, 152, 56),
+(44, &#x27;CN&#x27;, &#x27;CHINA&#x27;, &#x27;China&#x27;, &#x27;CHN&#x27;, 156, 86),
+(45, &#x27;CX&#x27;, &#x27;CHRISTMAS ISLAND&#x27;, &#x27;Christmas Island&#x27;, NULL, NULL, 61),
+(46, &#x27;CC&#x27;, &#x27;COCOS (KEELING) ISLANDS&#x27;, &#x27;Cocos (Keeling) Islands&#x27;, NULL, NULL, 672),
+(47, &#x27;CO&#x27;, &#x27;COLOMBIA&#x27;, &#x27;Colombia&#x27;, &#x27;COL&#x27;, 170, 57),
+(48, &#x27;KM&#x27;, &#x27;COMOROS&#x27;, &#x27;Comoros&#x27;, &#x27;COM&#x27;, 174, 269),
+(49, &#x27;CG&#x27;, &#x27;CONGO&#x27;, &#x27;Congo&#x27;, &#x27;COG&#x27;, 178, 242),
+(50, &#x27;CD&#x27;, &#x27;CONGO, THE DEMOCRATIC REPUBLIC OF THE&#x27;, &#x27;Congo, the Democratic Republic of the&#x27;, &#x27;COD&#x27;, 180, 242),
+(51, &#x27;CK&#x27;, &#x27;COOK ISLANDS&#x27;, &#x27;Cook Islands&#x27;, &#x27;COK&#x27;, 184, 682),
+(52, &#x27;CR&#x27;, &#x27;COSTA RICA&#x27;, &#x27;Costa Rica&#x27;, &#x27;CRI&#x27;, 188, 506),
+(53, &#x27;CI&#x27;, &quot;COTE D&#x27;&#x27;IVOIRE&quot;, &quot;Cote D&#x27;&#x27;Ivoire&quot;, &#x27;CIV&#x27;, 384, 225),
+(54, &#x27;HR&#x27;, &#x27;CROATIA&#x27;, &#x27;Croatia&#x27;, &#x27;HRV&#x27;, 191, 385),
+(55, &#x27;CU&#x27;, &#x27;CUBA&#x27;, &#x27;Cuba&#x27;, &#x27;CUB&#x27;, 192, 53),
+(56, &#x27;CY&#x27;, &#x27;CYPRUS&#x27;, &#x27;Cyprus&#x27;, &#x27;CYP&#x27;, 196, 357),
+(57, &#x27;CZ&#x27;, &#x27;CZECH REPUBLIC&#x27;, &#x27;Czech Republic&#x27;, &#x27;CZE&#x27;, 203, 420),
+(58, &#x27;DK&#x27;, &#x27;DENMARK&#x27;, &#x27;Denmark&#x27;, &#x27;DNK&#x27;, 208, 45),
+(59, &#x27;DJ&#x27;, &#x27;DJIBOUTI&#x27;, &#x27;Djibouti&#x27;, &#x27;DJI&#x27;, 262, 253),
+(60, &#x27;DM&#x27;, &#x27;DOMINICA&#x27;, &#x27;Dominica&#x27;, &#x27;DMA&#x27;, 212, 1767),
+(61, &#x27;DO&#x27;, &#x27;DOMINICAN REPUBLIC&#x27;, &#x27;Dominican Republic&#x27;, &#x27;DOM&#x27;, 214, 1809),
+(62, &#x27;EC&#x27;, &#x27;ECUADOR&#x27;, &#x27;Ecuador&#x27;, &#x27;ECU&#x27;, 218, 593),
+(63, &#x27;EG&#x27;, &#x27;EGYPT&#x27;, &#x27;Egypt&#x27;, &#x27;EGY&#x27;, 818, 20),
+(64, &#x27;SV&#x27;, &#x27;EL SALVADOR&#x27;, &#x27;El Salvador&#x27;, &#x27;SLV&#x27;, 222, 503),
+(65, &#x27;GQ&#x27;, &#x27;EQUATORIAL GUINEA&#x27;, &#x27;Equatorial Guinea&#x27;, &#x27;GNQ&#x27;, 226, 240),
+(66, &#x27;ER&#x27;, &#x27;ERITREA&#x27;, &#x27;Eritrea&#x27;, &#x27;ERI&#x27;, 232, 291),
+(67, &#x27;EE&#x27;, &#x27;ESTONIA&#x27;, &#x27;Estonia&#x27;, &#x27;EST&#x27;, 233, 372),
+(68, &#x27;ET&#x27;, &#x27;ETHIOPIA&#x27;, &#x27;Ethiopia&#x27;, &#x27;ETH&#x27;, 231, 251),
+(69, &#x27;FK&#x27;, &#x27;FALKLAND ISLANDS (MALVINAS)&#x27;, &#x27;Falkland Islands (Malvinas)&#x27;, &#x27;FLK&#x27;, 238, 500),
+(70, &#x27;FO&#x27;, &#x27;FAROE ISLANDS&#x27;, &#x27;Faroe Islands&#x27;, &#x27;FRO&#x27;, 234, 298),
+(71, &#x27;FJ&#x27;, &#x27;FIJI&#x27;, &#x27;Fiji&#x27;, &#x27;FJI&#x27;, 242, 679),
+(72, &#x27;FI&#x27;, &#x27;FINLAND&#x27;, &#x27;Finland&#x27;, &#x27;FIN&#x27;, 246, 358),
+(73, &#x27;FR&#x27;, &#x27;FRANCE&#x27;, &#x27;France&#x27;, &#x27;FRA&#x27;, 250, 33),
+(74, &#x27;GF&#x27;, &#x27;FRENCH GUIANA&#x27;, &#x27;French Guiana&#x27;, &#x27;GUF&#x27;, 254, 594),
+(75, &#x27;PF&#x27;, &#x27;FRENCH POLYNESIA&#x27;, &#x27;French Polynesia&#x27;, &#x27;PYF&#x27;, 258, 689),
+(76, &#x27;TF&#x27;, &#x27;FRENCH SOUTHERN TERRITORIES&#x27;, &#x27;French Southern Territories&#x27;, NULL, NULL, 0),
+(77, &#x27;GA&#x27;, &#x27;GABON&#x27;, &#x27;Gabon&#x27;, &#x27;GAB&#x27;, 266, 241),
+(78, &#x27;GM&#x27;, &#x27;GAMBIA&#x27;, &#x27;Gambia&#x27;, &#x27;GMB&#x27;, 270, 220),
+(79, &#x27;GE&#x27;, &#x27;GEORGIA&#x27;, &#x27;Georgia&#x27;, &#x27;GEO&#x27;, 268, 995),
+(80, &#x27;DE&#x27;, &#x27;GERMANY&#x27;, &#x27;Germany&#x27;, &#x27;DEU&#x27;, 276, 49),
+(81, &#x27;GH&#x27;, &#x27;GHANA&#x27;, &#x27;Ghana&#x27;, &#x27;GHA&#x27;, 288, 233),
+(82, &#x27;GI&#x27;, &#x27;GIBRALTAR&#x27;, &#x27;Gibraltar&#x27;, &#x27;GIB&#x27;, 292, 350),
+(83, &#x27;GR&#x27;, &#x27;GREECE&#x27;, &#x27;Greece&#x27;, &#x27;GRC&#x27;, 300, 30),
+(84, &#x27;GL&#x27;, &#x27;GREENLAND&#x27;, &#x27;Greenland&#x27;, &#x27;GRL&#x27;, 304, 299),
+(85, &#x27;GD&#x27;, &#x27;GRENADA&#x27;, &#x27;Grenada&#x27;, &#x27;GRD&#x27;, 308, 1473),
+(86, &#x27;GP&#x27;, &#x27;GUADELOUPE&#x27;, &#x27;Guadeloupe&#x27;, &#x27;GLP&#x27;, 312, 590),
+(87, &#x27;GU&#x27;, &#x27;GUAM&#x27;, &#x27;Guam&#x27;, &#x27;GUM&#x27;, 316, 1671),
+(88, &#x27;GT&#x27;, &#x27;GUATEMALA&#x27;, &#x27;Guatemala&#x27;, &#x27;GTM&#x27;, 320, 502),
+(89, &#x27;GN&#x27;, &#x27;GUINEA&#x27;, &#x27;Guinea&#x27;, &#x27;GIN&#x27;, 324, 224),
+(90, &#x27;GW&#x27;, &#x27;GUINEA-BISSAU&#x27;, &#x27;Guinea-Bissau&#x27;, &#x27;GNB&#x27;, 624, 245),
+(91, &#x27;GY&#x27;, &#x27;GUYANA&#x27;, &#x27;Guyana&#x27;, &#x27;GUY&#x27;, 328, 592),
+(92, &#x27;HT&#x27;, &#x27;HAITI&#x27;, &#x27;Haiti&#x27;, &#x27;HTI&#x27;, 332, 509),
+(93, &#x27;HM&#x27;, &#x27;HEARD ISLAND AND MCDONALD ISLANDS&#x27;, &#x27;Heard Island and Mcdonald Islands&#x27;, NULL, NULL, 0),
+(94, &#x27;VA&#x27;, &#x27;HOLY SEE (VATICAN CITY STATE)&#x27;, &#x27;Holy See (Vatican City State)&#x27;, &#x27;VAT&#x27;, 336, 39),
+(95, &#x27;HN&#x27;, &#x27;HONDURAS&#x27;, &#x27;Honduras&#x27;, &#x27;HND&#x27;, 340, 504),
+(96, &#x27;HK&#x27;, &#x27;HONG KONG&#x27;, &#x27;Hong Kong&#x27;, &#x27;HKG&#x27;, 344, 852),
+(97, &#x27;HU&#x27;, &#x27;HUNGARY&#x27;, &#x27;Hungary&#x27;, &#x27;HUN&#x27;, 348, 36),
+(98, &#x27;IS&#x27;, &#x27;ICELAND&#x27;, &#x27;Iceland&#x27;, &#x27;ISL&#x27;, 352, 354),
+(99, &#x27;IN&#x27;, &#x27;INDIA&#x27;, &#x27;India&#x27;, &#x27;IND&#x27;, 356, 91),
+(100, &#x27;ID&#x27;, &#x27;INDONESIA&#x27;, &#x27;Indonesia&#x27;, &#x27;IDN&#x27;, 360, 62),
+(101, &#x27;IR&#x27;, &#x27;IRAN, ISLAMIC REPUBLIC OF&#x27;, &#x27;Iran, Islamic Republic of&#x27;, &#x27;IRN&#x27;, 364, 98),
+(102, &#x27;IQ&#x27;, &#x27;IRAQ&#x27;, &#x27;Iraq&#x27;, &#x27;IRQ&#x27;, 368, 964),
+(103, &#x27;IE&#x27;, &#x27;IRELAND&#x27;, &#x27;Ireland&#x27;, &#x27;IRL&#x27;, 372, 353),
+(104, &#x27;IL&#x27;, &#x27;ISRAEL&#x27;, &#x27;Israel&#x27;, &#x27;ISR&#x27;, 376, 972),
+(105, &#x27;IT&#x27;, &#x27;ITALY&#x27;, &#x27;Italy&#x27;, &#x27;ITA&#x27;, 380, 39),
+(106, &#x27;JM&#x27;, &#x27;JAMAICA&#x27;, &#x27;Jamaica&#x27;, &#x27;JAM&#x27;, 388, 1876),
+(107, &#x27;JP&#x27;, &#x27;JAPAN&#x27;, &#x27;Japan&#x27;, &#x27;JPN&#x27;, 392, 81),
+(108, &#x27;JO&#x27;, &#x27;JORDAN&#x27;, &#x27;Jordan&#x27;, &#x27;JOR&#x27;, 400, 962),
+(109, &#x27;KZ&#x27;, &#x27;KAZAKHSTAN&#x27;, &#x27;Kazakhstan&#x27;, &#x27;KAZ&#x27;, 398, 7),
+(110, &#x27;KE&#x27;, &#x27;KENYA&#x27;, &#x27;Kenya&#x27;, &#x27;KEN&#x27;, 404, 254),
+(111, &#x27;KI&#x27;, &#x27;KIRIBATI&#x27;, &#x27;Kiribati&#x27;, &#x27;KIR&#x27;, 296, 686),
+(112, &#x27;KP&#x27;, &quot;KOREA, DEMOCRATIC PEOPLE&#x27;&#x27;S REPUBLIC OF&quot;, &quot;Korea, Democratic People&#x27;&#x27;s Republic of&quot;, &#x27;PRK&#x27;, 408, 850),
+(113, &#x27;KR&#x27;, &#x27;KOREA, REPUBLIC OF&#x27;, &#x27;Korea, Republic of&#x27;, &#x27;KOR&#x27;, 410, 82),
+(114, &#x27;KW&#x27;, &#x27;KUWAIT&#x27;, &#x27;Kuwait&#x27;, &#x27;KWT&#x27;, 414, 965),
+(115, &#x27;KG&#x27;, &#x27;KYRGYZSTAN&#x27;, &#x27;Kyrgyzstan&#x27;, &#x27;KGZ&#x27;, 417, 996),
+(116, &#x27;LA&#x27;, &quot;LAO PEOPLE&#x27;&#x27;S DEMOCRATIC REPUBLIC&quot;, &quot;Lao People&#x27;&#x27;s Democratic Republic&quot;, &#x27;LAO&#x27;, 418, 856),
+(117, &#x27;LV&#x27;, &#x27;LATVIA&#x27;, &#x27;Latvia&#x27;, &#x27;LVA&#x27;, 428, 371),
+(118, &#x27;LB&#x27;, &#x27;LEBANON&#x27;, &#x27;Lebanon&#x27;, &#x27;LBN&#x27;, 422, 961),
+(119, &#x27;LS&#x27;, &#x27;LESOTHO&#x27;, &#x27;Lesotho&#x27;, &#x27;LSO&#x27;, 426, 266),
+(120, &#x27;LR&#x27;, &#x27;LIBERIA&#x27;, &#x27;Liberia&#x27;, &#x27;LBR&#x27;, 430, 231),
+(121, &#x27;LY&#x27;, &#x27;LIBYAN ARAB JAMAHIRIYA&#x27;, &#x27;Libyan Arab Jamahiriya&#x27;, &#x27;LBY&#x27;, 434, 218),
+(122, &#x27;LI&#x27;, &#x27;LIECHTENSTEIN&#x27;, &#x27;Liechtenstein&#x27;, &#x27;LIE&#x27;, 438, 423),
+(123, &#x27;LT&#x27;, &#x27;LITHUANIA&#x27;, &#x27;Lithuania&#x27;, &#x27;LTU&#x27;, 440, 370),
+(124, &#x27;LU&#x27;, &#x27;LUXEMBOURG&#x27;, &#x27;Luxembourg&#x27;, &#x27;LUX&#x27;, 442, 352),
+(125, &#x27;MO&#x27;, &#x27;MACAO&#x27;, &#x27;Macao&#x27;, &#x27;MAC&#x27;, 446, 853),
+(126, &#x27;MK&#x27;, &#x27;MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF&#x27;, &#x27;Macedonia, the Former Yugoslav Republic of&#x27;, &#x27;MKD&#x27;, 807, 389),
+(127, &#x27;MG&#x27;, &#x27;MADAGASCAR&#x27;, &#x27;Madagascar&#x27;, &#x27;MDG&#x27;, 450, 261),
+(128, &#x27;MW&#x27;, &#x27;MALAWI&#x27;, &#x27;Malawi&#x27;, &#x27;MWI&#x27;, 454, 265),
+(129, &#x27;MY&#x27;, &#x27;MALAYSIA&#x27;, &#x27;Malaysia&#x27;, &#x27;MYS&#x27;, 458, 60),
+(130, &#x27;MV&#x27;, &#x27;MALDIVES&#x27;, &#x27;Maldives&#x27;, &#x27;MDV&#x27;, 462, 960),
+(131, &#x27;ML&#x27;, &#x27;MALI&#x27;, &#x27;Mali&#x27;, &#x27;MLI&#x27;, 466, 223),
+(132, &#x27;MT&#x27;, &#x27;MALTA&#x27;, &#x27;Malta&#x27;, &#x27;MLT&#x27;, 470, 356),
+(133, &#x27;MH&#x27;, &#x27;MARSHALL ISLANDS&#x27;, &#x27;Marshall Islands&#x27;, &#x27;MHL&#x27;, 584, 692),
+(134, &#x27;MQ&#x27;, &#x27;MARTINIQUE&#x27;, &#x27;Martinique&#x27;, &#x27;MTQ&#x27;, 474, 596),
+(135, &#x27;MR&#x27;, &#x27;MAURITANIA&#x27;, &#x27;Mauritania&#x27;, &#x27;MRT&#x27;, 478, 222),
+(136, &#x27;MU&#x27;, &#x27;MAURITIUS&#x27;, &#x27;Mauritius&#x27;, &#x27;MUS&#x27;, 480, 230),
+(137, &#x27;YT&#x27;, &#x27;MAYOTTE&#x27;, &#x27;Mayotte&#x27;, NULL, NULL, 269),
+(138, &#x27;MX&#x27;, &#x27;MEXICO&#x27;, &#x27;Mexico&#x27;, &#x27;MEX&#x27;, 484, 52),
+(139, &#x27;FM&#x27;, &#x27;MICRONESIA, FEDERATED STATES OF&#x27;, &#x27;Micronesia, Federated States of&#x27;, &#x27;FSM&#x27;, 583, 691),
+(140, &#x27;MD&#x27;, &#x27;MOLDOVA, REPUBLIC OF&#x27;, &#x27;Moldova, Republic of&#x27;, &#x27;MDA&#x27;, 498, 373),
+(141, &#x27;MC&#x27;, &#x27;MONACO&#x27;, &#x27;Monaco&#x27;, &#x27;MCO&#x27;, 492, 377),
+(142, &#x27;MN&#x27;, &#x27;MONGOLIA&#x27;, &#x27;Mongolia&#x27;, &#x27;MNG&#x27;, 496, 976),
+(143, &#x27;MS&#x27;, &#x27;MONTSERRAT&#x27;, &#x27;Montserrat&#x27;, &#x27;MSR&#x27;, 500, 1664),
+(144, &#x27;MA&#x27;, &#x27;MOROCCO&#x27;, &#x27;Morocco&#x27;, &#x27;MAR&#x27;, 504, 212),
+(145, &#x27;MZ&#x27;, &#x27;MOZAMBIQUE&#x27;, &#x27;Mozambique&#x27;, &#x27;MOZ&#x27;, 508, 258),
+(146, &#x27;MM&#x27;, &#x27;MYANMAR&#x27;, &#x27;Myanmar&#x27;, &#x27;MMR&#x27;, 104, 95),
+(147, &#x27;NA&#x27;, &#x27;NAMIBIA&#x27;, &#x27;Namibia&#x27;, &#x27;NAM&#x27;, 516, 264),
+(148, &#x27;NR&#x27;, &#x27;NAURU&#x27;, &#x27;Nauru&#x27;, &#x27;NRU&#x27;, 520, 674),
+(149, &#x27;NP&#x27;, &#x27;NEPAL&#x27;, &#x27;Nepal&#x27;, &#x27;NPL&#x27;, 524, 977),
+(150, &#x27;NL&#x27;, &#x27;NETHERLANDS&#x27;, &#x27;Netherlands&#x27;, &#x27;NLD&#x27;, 528, 31),
+(151, &#x27;AN&#x27;, &#x27;NETHERLANDS ANTILLES&#x27;, &#x27;Netherlands Antilles&#x27;, &#x27;ANT&#x27;, 530, 599),
+(152, &#x27;NC&#x27;, &#x27;NEW CALEDONIA&#x27;, &#x27;New Caledonia&#x27;, &#x27;NCL&#x27;, 540, 687),
+(153, &#x27;NZ&#x27;, &#x27;NEW ZEALAND&#x27;, &#x27;New Zealand&#x27;, &#x27;NZL&#x27;, 554, 64),
+(154, &#x27;NI&#x27;, &#x27;NICARAGUA&#x27;, &#x27;Nicaragua&#x27;, &#x27;NIC&#x27;, 558, 505),
+(155, &#x27;NE&#x27;, &#x27;NIGER&#x27;, &#x27;Niger&#x27;, &#x27;NER&#x27;, 562, 227),
+(156, &#x27;NG&#x27;, &#x27;NIGERIA&#x27;, &#x27;Nigeria&#x27;, &#x27;NGA&#x27;, 566, 234),
+(157, &#x27;NU&#x27;, &#x27;NIUE&#x27;, &#x27;Niue&#x27;, &#x27;NIU&#x27;, 570, 683),
+(158, &#x27;NF&#x27;, &#x27;NORFOLK ISLAND&#x27;, &#x27;Norfolk Island&#x27;, &#x27;NFK&#x27;, 574, 672),
+(159, &#x27;MP&#x27;, &#x27;NORTHERN MARIANA ISLANDS&#x27;, &#x27;Northern Mariana Islands&#x27;, &#x27;MNP&#x27;, 580, 1670),
+(160, &#x27;NO&#x27;, &#x27;NORWAY&#x27;, &#x27;Norway&#x27;, &#x27;NOR&#x27;, 578, 47),
+(161, &#x27;OM&#x27;, &#x27;OMAN&#x27;, &#x27;Oman&#x27;, &#x27;OMN&#x27;, 512, 968),
+(162, &#x27;PK&#x27;, &#x27;PAKISTAN&#x27;, &#x27;Pakistan&#x27;, &#x27;PAK&#x27;, 586, 92),
+(163, &#x27;PW&#x27;, &#x27;PALAU&#x27;, &#x27;Palau&#x27;, &#x27;PLW&#x27;, 585, 680),
+(164, &#x27;PS&#x27;, &#x27;PALESTINIAN TERRITORY, OCCUPIED&#x27;, &#x27;Palestinian Territory, Occupied&#x27;, NULL, NULL, 970),
+(165, &#x27;PA&#x27;, &#x27;PANAMA&#x27;, &#x27;Panama&#x27;, &#x27;PAN&#x27;, 591, 507),
+(166, &#x27;PG&#x27;, &#x27;PAPUA NEW GUINEA&#x27;, &#x27;Papua New Guinea&#x27;, &#x27;PNG&#x27;, 598, 675),
+(167, &#x27;PY&#x27;, &#x27;PARAGUAY&#x27;, &#x27;Paraguay&#x27;, &#x27;PRY&#x27;, 600, 595),
+(168, &#x27;PE&#x27;, &#x27;PERU&#x27;, &#x27;Peru&#x27;, &#x27;PER&#x27;, 604, 51),
+(169, &#x27;PH&#x27;, &#x27;PHILIPPINES&#x27;, &#x27;Philippines&#x27;, &#x27;PHL&#x27;, 608, 63),
+(170, &#x27;PN&#x27;, &#x27;PITCAIRN&#x27;, &#x27;Pitcairn&#x27;, &#x27;PCN&#x27;, 612, 0),
+(171, &#x27;PL&#x27;, &#x27;POLAND&#x27;, &#x27;Poland&#x27;, &#x27;POL&#x27;, 616, 48),
+(172, &#x27;PT&#x27;, &#x27;PORTUGAL&#x27;, &#x27;Portugal&#x27;, &#x27;PRT&#x27;, 620, 351),
+(173, &#x27;PR&#x27;, &#x27;PUERTO RICO&#x27;, &#x27;Puerto Rico&#x27;, &#x27;PRI&#x27;, 630, 1787),
+(174, &#x27;QA&#x27;, &#x27;QATAR&#x27;, &#x27;Qatar&#x27;, &#x27;QAT&#x27;, 634, 974),
+(175, &#x27;RE&#x27;, &#x27;REUNION&#x27;, &#x27;Reunion&#x27;, &#x27;REU&#x27;, 638, 262),
+(176, &#x27;RO&#x27;, &#x27;ROMANIA&#x27;, &#x27;Romania&#x27;, &#x27;ROM&#x27;, 642, 40),
+(177, &#x27;RU&#x27;, &#x27;RUSSIAN FEDERATION&#x27;, &#x27;Russian Federation&#x27;, &#x27;RUS&#x27;, 643, 70),
+(178, &#x27;RW&#x27;, &#x27;RWANDA&#x27;, &#x27;Rwanda&#x27;, &#x27;RWA&#x27;, 646, 250),
+(179, &#x27;SH&#x27;, &#x27;SAINT HELENA&#x27;, &#x27;Saint Helena&#x27;, &#x27;SHN&#x27;, 654, 290),
+(180, &#x27;KN&#x27;, &#x27;SAINT KITTS AND NEVIS&#x27;, &#x27;Saint Kitts and Nevis&#x27;, &#x27;KNA&#x27;, 659, 1869),
+(181, &#x27;LC&#x27;, &#x27;SAINT LUCIA&#x27;, &#x27;Saint Lucia&#x27;, &#x27;LCA&#x27;, 662, 1758),
+(182, &#x27;PM&#x27;, &#x27;SAINT PIERRE AND MIQUELON&#x27;, &#x27;Saint Pierre and Miquelon&#x27;, &#x27;SPM&#x27;, 666, 508),
+(183, &#x27;VC&#x27;, &#x27;SAINT VINCENT AND THE GRENADINES&#x27;, &#x27;Saint Vincent and the Grenadines&#x27;, &#x27;VCT&#x27;, 670, 1784),
+(184, &#x27;WS&#x27;, &#x27;SAMOA&#x27;, &#x27;Samoa&#x27;, &#x27;WSM&#x27;, 882, 684),
+(185, &#x27;SM&#x27;, &#x27;SAN MARINO&#x27;, &#x27;San Marino&#x27;, &#x27;SMR&#x27;, 674, 378),
+(186, &#x27;ST&#x27;, &#x27;SAO TOME AND PRINCIPE&#x27;, &#x27;Sao Tome and Principe&#x27;, &#x27;STP&#x27;, 678, 239),
+(187, &#x27;SA&#x27;, &#x27;SAUDI ARABIA&#x27;, &#x27;Saudi Arabia&#x27;, &#x27;SAU&#x27;, 682, 966),
+(188, &#x27;SN&#x27;, &#x27;SENEGAL&#x27;, &#x27;Senegal&#x27;, &#x27;SEN&#x27;, 686, 221),
+(189, &#x27;CS&#x27;, &#x27;SERBIA AND MONTENEGRO&#x27;, &#x27;Serbia and Montenegro&#x27;, NULL, NULL, 381),
+(190, &#x27;SC&#x27;, &#x27;SEYCHELLES&#x27;, &#x27;Seychelles&#x27;, &#x27;SYC&#x27;, 690, 248),
+(191, &#x27;SL&#x27;, &#x27;SIERRA LEONE&#x27;, &#x27;Sierra Leone&#x27;, &#x27;SLE&#x27;, 694, 232),
+(192, &#x27;SG&#x27;, &#x27;SINGAPORE&#x27;, &#x27;Singapore&#x27;, &#x27;SGP&#x27;, 702, 65),
+(193, &#x27;SK&#x27;, &#x27;SLOVAKIA&#x27;, &#x27;Slovakia&#x27;, &#x27;SVK&#x27;, 703, 421),
+(194, &#x27;SI&#x27;, &#x27;SLOVENIA&#x27;, &#x27;Slovenia&#x27;, &#x27;SVN&#x27;, 705, 386),
+(195, &#x27;SB&#x27;, &#x27;SOLOMON ISLANDS&#x27;, &#x27;Solomon Islands&#x27;, &#x27;SLB&#x27;, 90, 677),
+(196, &#x27;SO&#x27;, &#x27;SOMALIA&#x27;, &#x27;Somalia&#x27;, &#x27;SOM&#x27;, 706, 252),
+(197, &#x27;ZA&#x27;, &#x27;SOUTH AFRICA&#x27;, &#x27;South Africa&#x27;, &#x27;ZAF&#x27;, 710, 27),
+(198, &#x27;GS&#x27;, &#x27;SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS&#x27;, &#x27;South Georgia and the South Sandwich Islands&#x27;, NULL, NULL, 0),
+(199, &#x27;ES&#x27;, &#x27;SPAIN&#x27;, &#x27;Spain&#x27;, &#x27;ESP&#x27;, 724, 34),
+(200, &#x27;LK&#x27;, &#x27;SRI LANKA&#x27;, &#x27;Sri Lanka&#x27;, &#x27;LKA&#x27;, 144, 94),
+(201, &#x27;SD&#x27;, &#x27;SUDAN&#x27;, &#x27;Sudan&#x27;, &#x27;SDN&#x27;, 736, 249),
+(202, &#x27;SR&#x27;, &#x27;SURINAME&#x27;, &#x27;Suriname&#x27;, &#x27;SUR&#x27;, 740, 597),
+(203, &#x27;SJ&#x27;, &#x27;SVALBARD AND JAN MAYEN&#x27;, &#x27;Svalbard and Jan Mayen&#x27;, &#x27;SJM&#x27;, 744, 47),
+(204, &#x27;SZ&#x27;, &#x27;SWAZILAND&#x27;, &#x27;Swaziland&#x27;, &#x27;SWZ&#x27;, 748, 268),
+(205, &#x27;SE&#x27;, &#x27;SWEDEN&#x27;, &#x27;Sweden&#x27;, &#x27;SWE&#x27;, 752, 46),
+(206, &#x27;CH&#x27;, &#x27;SWITZERLAND&#x27;, &#x27;Switzerland&#x27;, &#x27;CHE&#x27;, 756, 41),
+(207, &#x27;SY&#x27;, &#x27;SYRIAN ARAB REPUBLIC&#x27;, &#x27;Syrian Arab Republic&#x27;, &#x27;SYR&#x27;, 760, 963),
+(208, &#x27;TW&#x27;, &#x27;TAIWAN, PROVINCE OF CHINA&#x27;, &#x27;Taiwan, Province of China&#x27;, &#x27;TWN&#x27;, 158, 886),
+(209, &#x27;TJ&#x27;, &#x27;TAJIKISTAN&#x27;, &#x27;Tajikistan&#x27;, &#x27;TJK&#x27;, 762, 992),
+(210, &#x27;TZ&#x27;, &#x27;TANZANIA, UNITED REPUBLIC OF&#x27;, &#x27;Tanzania, United Republic of&#x27;, &#x27;TZA&#x27;, 834, 255),
+(211, &#x27;TH&#x27;, &#x27;THAILAND&#x27;, &#x27;Thailand&#x27;, &#x27;THA&#x27;, 764, 66),
+(212, &#x27;TL&#x27;, &#x27;TIMOR-LESTE&#x27;, &#x27;Timor-Leste&#x27;, NULL, NULL, 670),
+(213, &#x27;TG&#x27;, &#x27;TOGO&#x27;, &#x27;Togo&#x27;, &#x27;TGO&#x27;, 768, 228),
+(214, &#x27;TK&#x27;, &#x27;TOKELAU&#x27;, &#x27;Tokelau&#x27;, &#x27;TKL&#x27;, 772, 690),
+(215, &#x27;TO&#x27;, &#x27;TONGA&#x27;, &#x27;Tonga&#x27;, &#x27;TON&#x27;, 776, 676),
+(216, &#x27;TT&#x27;, &#x27;TRINIDAD AND TOBAGO&#x27;, &#x27;Trinidad and Tobago&#x27;, &#x27;TTO&#x27;, 780, 1868),
+(217, &#x27;TN&#x27;, &#x27;TUNISIA&#x27;, &#x27;Tunisia&#x27;, &#x27;TUN&#x27;, 788, 216),
+(218, &#x27;TR&#x27;, &#x27;TURKEY&#x27;, &#x27;Turkey&#x27;, &#x27;TUR&#x27;, 792, 90),
+(219, &#x27;TM&#x27;, &#x27;TURKMENISTAN&#x27;, &#x27;Turkmenistan&#x27;, &#x27;TKM&#x27;, 795, 7370),
+(220, &#x27;TC&#x27;, &#x27;TURKS AND CAICOS ISLANDS&#x27;, &#x27;Turks and Caicos Islands&#x27;, &#x27;TCA&#x27;, 796, 1649),
+(221, &#x27;TV&#x27;, &#x27;TUVALU&#x27;, &#x27;Tuvalu&#x27;, &#x27;TUV&#x27;, 798, 688),
+(222, &#x27;UG&#x27;, &#x27;UGANDA&#x27;, &#x27;Uganda&#x27;, &#x27;UGA&#x27;, 800, 256),
+(223, &#x27;UA&#x27;, &#x27;UKRAINE&#x27;, &#x27;Ukraine&#x27;, &#x27;UKR&#x27;, 804, 380),
+(224, &#x27;AE&#x27;, &#x27;UNITED ARAB EMIRATES&#x27;, &#x27;United Arab Emirates&#x27;, &#x27;ARE&#x27;, 784, 971),
+(225, &#x27;GB&#x27;, &#x27;UNITED KINGDOM&#x27;, &#x27;United Kingdom&#x27;, &#x27;GBR&#x27;, 826, 44),
+(226, &#x27;US&#x27;, &#x27;UNITED STATES&#x27;, &#x27;United States&#x27;, &#x27;USA&#x27;, 840, 1),
+(227, &#x27;UM&#x27;, &#x27;UNITED STATES MINOR OUTLYING ISLANDS&#x27;, &#x27;United States Minor Outlying Islands&#x27;, NULL, NULL, 1),
+(228, &#x27;UY&#x27;, &#x27;URUGUAY&#x27;, &#x27;Uruguay&#x27;, &#x27;URY&#x27;, 858, 598),
+(229, &#x27;UZ&#x27;, &#x27;UZBEKISTAN&#x27;, &#x27;Uzbekistan&#x27;, &#x27;UZB&#x27;, 860, 998),
+(230, &#x27;VU&#x27;, &#x27;VANUATU&#x27;, &#x27;Vanuatu&#x27;, &#x27;VUT&#x27;, 548, 678),
+(231, &#x27;VE&#x27;, &#x27;VENEZUELA&#x27;, &#x27;Venezuela&#x27;, &#x27;VEN&#x27;, 862, 58),
+(232, &#x27;VN&#x27;, &#x27;VIET NAM&#x27;, &#x27;Viet Nam&#x27;, &#x27;VNM&#x27;, 704, 84),
+(233, &#x27;VG&#x27;, &#x27;VIRGIN ISLANDS, BRITISH&#x27;, &#x27;Virgin Islands, British&#x27;, &#x27;VGB&#x27;, 92, 1284),
+(234, &#x27;VI&#x27;, &#x27;VIRGIN ISLANDS, U.S.&#x27;, &#x27;Virgin Islands, U.s.&#x27;, &#x27;VIR&#x27;, 850, 1340),
+(235, &#x27;WF&#x27;, &#x27;WALLIS AND FUTUNA&#x27;, &#x27;Wallis and Futuna&#x27;, &#x27;WLF&#x27;, 876, 681),
+(236, &#x27;EH&#x27;, &#x27;WESTERN SAHARA&#x27;, &#x27;Western Sahara&#x27;, &#x27;ESH&#x27;, 732, 212),
+(237, &#x27;YE&#x27;, &#x27;YEMEN&#x27;, &#x27;Yemen&#x27;, &#x27;YEM&#x27;, 887, 967),
+(238, &#x27;ZM&#x27;, &#x27;ZAMBIA&#x27;, &#x27;Zambia&#x27;, &#x27;ZMB&#x27;, 894, 260),
+(239, &#x27;ZW&#x27;, &#x27;ZIMBABWE&#x27;, &#x27;Zimbabwe&#x27;, &#x27;ZWE&#x27;, 716, 263);</code></pre><p id="017b18d0-e7eb-41af-bd7f-7fe29ff1a08a" class="">In <code>models/sources</code></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="931570b4-1246-4b6d-8466-ca94f6a12725" class="code"><code class="language-YAML">
+# sources.yml
+version: 2
+
+sources:
+  - name: retail
+    database: airtube-390719 # Put the project id!
+
+    tables:
+      - name: raw_invoices
+			- name: country</code></pre><p id="0a9ce132-0229-4a6f-a611-f7895e8c123e" class="">In <code>models/transform</code></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2102839c-530f-47b1-8103-935560e89022" class="code"><code class="language-SQL">-- dim_customer.sql
+
+-- Create the dimension table
+WITH customer_cte AS (
+	SELECT DISTINCT
+	    {{ dbt_utils.generate_surrogate_key([&#x27;CustomerID&#x27;, &#x27;Country&#x27;]) }} as customer_id,
+	    Country AS country
+	FROM {{ source(&#x27;retail&#x27;, &#x27;raw_invoices&#x27;) }}
+	WHERE CustomerID IS NOT NULL
+)
+SELECT
+    t.*,
+	cm.iso
+FROM customer_cte t
+LEFT JOIN {{ source(&#x27;retail&#x27;, &#x27;country&#x27;) }} cm ON t.country = cm.nicename</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ae87ad96-4b65-46cc-9ea1-815b7971149b" class="code"><code class="language-SQL">-- dim_datetime.sql
+
+-- Create a CTE to extract date and time components
+WITH datetime_cte AS (  
+  SELECT DISTINCT
+    InvoiceDate AS datetime_id,
+    CASE
+      WHEN LENGTH(InvoiceDate) = 16 THEN
+        -- Date format: &quot;DD/MM/YYYY HH:MM&quot;
+        PARSE_DATETIME(&#x27;%m/%d/%Y %H:%M&#x27;, InvoiceDate)
+      WHEN LENGTH(InvoiceDate) &lt;= 14 THEN
+        -- Date format: &quot;MM/DD/YY HH:MM&quot;
+        PARSE_DATETIME(&#x27;%m/%d/%y %H:%M&#x27;, InvoiceDate)
+      ELSE
+        NULL
+    END AS date_part,
+  FROM {{ source(&#x27;retail&#x27;, &#x27;raw_invoices&#x27;) }}
+  WHERE InvoiceDate IS NOT NULL
+)
+SELECT
+  datetime_id,
+  date_part as datetime,
+  EXTRACT(YEAR FROM date_part) AS year,
+  EXTRACT(MONTH FROM date_part) AS month,
+  EXTRACT(DAY FROM date_part) AS day,
+  EXTRACT(HOUR FROM date_part) AS hour,
+  EXTRACT(MINUTE FROM date_part) AS minute,
+  EXTRACT(DAYOFWEEK FROM date_part) AS weekday
+FROM datetime_cte</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e5362d08-5d06-4234-93e5-7cfdbc302d49" class="code"><code class="language-SQL">-- dim_product.sql
+-- StockCode isn&#x27;t unique, a product with the same id can have different and prices
+-- Create the dimension table
+SELECT DISTINCT
+    {{ dbt_utils.generate_surrogate_key([&#x27;StockCode&#x27;, &#x27;Description&#x27;, &#x27;UnitPrice&#x27;]) }} as product_id,
+		StockCode AS stock_code,
+    Description AS description,
+    UnitPrice AS price
+FROM {{ source(&#x27;retail&#x27;, &#x27;raw_invoices&#x27;) }}
+WHERE StockCode IS NOT NULL
+AND UnitPrice &gt; 0</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="13841a88-8521-4a24-a4f1-c522f1541631" class="code"><code class="language-SQL">-- fct_invoices.sql
+
+-- Create the fact table by joining the relevant keys from dimension table
+WITH fct_invoices_cte AS (
+    SELECT
+        InvoiceNo AS invoice_id,
+        InvoiceDate AS datetime_id,
+        {{ dbt_utils.generate_surrogate_key([&#x27;StockCode&#x27;, &#x27;Description&#x27;, &#x27;UnitPrice&#x27;]) }} as product_id,
+        {{ dbt_utils.generate_surrogate_key([&#x27;CustomerID&#x27;, &#x27;Country&#x27;]) }} as customer_id,
+        Quantity AS quantity,
+        Quantity * UnitPrice AS total
+    FROM {{ source(&#x27;retail&#x27;, &#x27;raw_invoices&#x27;) }}
+    WHERE Quantity &gt; 0
+)
+SELECT
+    invoice_id,
+    dt.datetime_id,
+    dp.product_id,
+    dc.customer_id,
+    quantity,
+    total
+FROM fct_invoices_cte fi
+INNER JOIN {{ ref(&#x27;dim_datetime&#x27;) }} dt ON fi.datetime_id = dt.datetime_id
+INNER JOIN {{ ref(&#x27;dim_product&#x27;) }} dp ON fi.product_id = dp.product_id
+INNER JOIN {{ ref(&#x27;dim_customer&#x27;) }} dc ON fi.customer_id = dc.customer_id</code></pre></div></li></ul></div></li></ul><ul id="f23824bd-c61a-4395-841e-27fb18e9f7f7" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Run the models</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ac0e1c05-40df-4180-bc27-fe706aa30530" class="code"><code class="language-Bash">astro dev bash
+source /usr/local/airflow/dbt_venv/bin/activate
+cd include/dbt 
+dbt deps
+dbt run --profiles-dir /usr/local/airflow/include/dbt/</code></pre><p id="7b9dd932-1a9b-43ad-8d8b-4c7f723dffc6" class="">Check on big queries that the tables exist with data</p></div></li></ul><ul id="7bf84856-9cd2-44c6-ace7-90e49272b269" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Add the task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="0cdbfd74-7594-4790-ad66-47414f1e1e89" class="code"><code class="language-Python">from include.dbt.cosmos_config import DBT_PROJECT_CONFIG, DBT_CONFIG
+from cosmos.airflow.task_group import DbtTaskGroup
+from cosmos.constants import LoadMode
+from cosmos.config import ProjectConfig, RenderConfig
+
+transform = DbtTaskGroup(
+        group_id=&#x27;transform&#x27;,
+        project_config=DBT_PROJECT_CONFIG,
+        profile_config=DBT_CONFIG,
+        render_config=RenderConfig(
+            load_method=LoadMode.DBT_LS,
+            select=[&#x27;path:models/transform&#x27;]
+        )
+    )</code></pre></div></li></ul><ul id="7dead5cc-101e-4bcd-979f-4b2ce31e8b64" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Create DBT_CONFIG</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="cb92d429-d3d5-4bf9-ad5b-2f19150ce1e9" class="code"><code class="language-Python"># include/dbt/cosmos_config.py
+
+from cosmos.config import ProfileConfig, ProjectConfig
+from pathlib import Path
+
+DBT_CONFIG = ProfileConfig(
+    profile_name=&#x27;retail&#x27;,
+    target_name=&#x27;dev&#x27;,
+    profiles_yml_filepath=Path(&#x27;/usr/local/airflow/include/dbt/profiles.yml&#x27;)
+)
+
+DBT_PROJECT_CONFIG = ProjectConfig(
+    dbt_project_path=&#x27;/usr/local/airflow/include/dbt/&#x27;,
+)</code></pre></div></li></ul><ul id="27b12338-923a-40d4-a848-83bd60f46323" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Test a task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="ea00051e-bb0f-417c-a67f-fe37bb5a6e7b" class="code"><code class="language-Bash">astro dev bash
+airflow tasks list retail
+airflow tasks test retail transform.dim_customer.dim_customer_run 2023-01-01
+airflow tasks test retail transform.dim_customer.dim_customer_test 2023-01-01</code></pre></div></li></ul><ul id="818e7879-789a-4c56-9534-fd3e90e37123" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Go check out the Airflow UI, you should see a TaskGroup transform with the models</span><div class="indented"></div></li></ul><p id="0405a4eb-5e12-43d2-9d37-839f876122c9" class=""><strong>🏆 First dbt models in place!</strong></p><p id="5746304e-4f29-47a9-8241-4ec9c05e652e" class="">
+</p><ul id="d8c24cfa-f1d6-4b68-b9f9-365c101cfbb6" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In <code>include/soda/checks/transform</code></span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9788181d-c9c8-4e12-a787-f45fee6d996e" class="code"><code class="language-YAML"># dim_customer.yml
+checks for dim_customer:
+  - schema:
+      fail:
+        when required column missing: 
+          [customer_id, country]
+        when wrong column type:
+          customer_id: string
+          country: string
+  - duplicate_count(customer_id) = 0:
+      name: All customers are unique
+  - missing_count(customer_id) = 0:
+      name: All customers have a key</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="57c73121-ca3f-4922-9334-105a8b477847" class="code"><code class="language-YAML"># dim_datetime.yml
+checks for dim_datetime:
+  # Check fails when product_key or english_product_name is missing, OR
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: [datetime_id, datetime]
+        when wrong column type:
+          datetime_id: string
+          datetime: datetime
+  # Check failes when weekday is not in range 0-6
+  - invalid_count(weekday) = 0:
+      name: All weekdays are in range 0-6
+      valid min: 0
+      valid max: 6
+  # Check fails when customer_id is not unique
+  - duplicate_count(datetime_id) = 0:
+      name: All datetimes are unique
+  # Check fails when any NULL values exist in the column
+  - missing_count(datetime_id) = 0:
+      name: All datetimes have a key</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8ba88922-3c02-4471-a065-c92835a37cd2" class="code"><code class="language-YAML"># dim_product.yml
+checks for dim_product:
+  # Check fails when product_key or english_product_name is missing, OR
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: [product_id, description, price]
+        when wrong column type:
+          product_id: string
+          description: string
+          price: float64
+  # Check fails when customer_id is not unique
+  - duplicate_count(product_id) = 0:
+      name: All products are unique
+  # Check fails when any NULL values exist in the column
+  - missing_count(product_id) = 0:
+      name: All products have a key
+  # Check fails when any prices are negative
+  - min(price):
+      fail: when &lt; 0</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e981e319-ea25-49bb-8118-82ff4d178ce9" class="code"><code class="language-YAML"># fct_invoices.yml
+checks for fct_invoices:
+  # Check fails when invoice_id, quantity, total is missing or
+  # when the data type of those columns is other than specified
+  - schema:
+      fail:
+        when required column missing: 
+          [invoice_id, product_id, customer_id, datetime_id, quantity, total]
+        when wrong column type:
+          invoice_id: string
+          product_id: string
+          customer_id: string
+          datetime_id: string
+          quantity: int
+          total: float64
+  # Check fails when NULL values in the column
+  - missing_count(invoice_id) = 0:
+      name: All invoices have a key
+  # Check fails when the total of any invoices is negative
+  - failed rows:
+      name: All invoices have a positive total amount
+      fail query: |
+        SELECT invoice_id, total
+        FROM fct_invoices
+        WHERE total &lt; 0</code></pre></div></li></ul><ul id="eddaa54b-ceee-4dc4-8c54-1e960aca3bb3" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Add a new task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e64c2226-ea57-49d9-b7f1-339c51a138bc" class="code"><code class="language-Python">@task.external_python(python=&#x27;/usr/local/airflow/soda_venv/bin/python&#x27;)
+    def check_transform(scan_name=&#x27;check_transform&#x27;, checks_subpath=&#x27;transform&#x27;):
+        from include.soda.check_function import check
+
+        return check(scan_name, checks_subpath)</code></pre></div></li></ul><p id="435b6365-026c-4b3b-9876-4e75b5b127c7" class="">
+</p><h3 id="daeb44cd-78f3-4cd8-9505-5c9f8afd2dce" class="">Reports</h3><p id="a5843373-5887-49aa-b705-d89991951c55" class="">
+</p><ul id="43443e57-d5a7-4104-a980-5bf95f7e70a1" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In <code>include/dbt/models/report</code> </span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="abc48793-afa2-417a-8c22-504f4bd9af07" class="code"><code class="language-SQL">-- report_customer_invoices.sql
+SELECT
+  c.country,
+  c.iso,
+  COUNT(fi.invoice_id) AS total_invoices,
+  SUM(fi.total) AS total_revenue
+FROM {{ ref(&#x27;fct_invoices&#x27;) }} fi
+JOIN {{ ref(&#x27;dim_customer&#x27;) }} c ON fi.customer_id = c.customer_id
+GROUP BY c.country, c.iso
+ORDER BY total_revenue DESC
+LIMIT 10</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="a8f41c80-c034-4959-9cd0-cfb9f924fc1a" class="code"><code class="language-SQL">-- report_product_invoices.sql
+SELECT
+  p.product_id,
+  p.stock_code,
+  p.description,
+  SUM(fi.quantity) AS total_quantity_sold
+FROM {{ ref(&#x27;fct_invoices&#x27;) }} fi
+JOIN {{ ref(&#x27;dim_product&#x27;) }} p ON fi.product_id = p.product_id
+GROUP BY p.product_id, p.stock_code, p.description
+ORDER BY total_quantity_sold DESC
+LIMIT 10</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="95a957c7-a413-4cd9-ae94-bdac72c14f8e" class="code"><code class="language-SQL">-- report_year_invoices.sql
+SELECT
+  dt.year,
+  dt.month,
+  COUNT(DISTINCT fi.invoice_id) AS num_invoices,
+  SUM(fi.total) AS total_revenue
+FROM {{ ref(&#x27;fct_invoices&#x27;) }} fi
+JOIN {{ ref(&#x27;dim_datetime&#x27;) }} dt ON fi.datetime_id = dt.datetime_id
+GROUP BY dt.year, dt.month
+ORDER BY dt.year, dt.month</code></pre></div></li></ul><ul id="56302b76-b6f7-47cd-8fec-bdb6e076f1ad" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Add a new task</span><div class="indented"><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="fdfec536-2c5e-479b-b623-fb55acd36404" class="code"><code class="language-SQL">report = DbtTaskGroup(
+        group_id=&#x27;report&#x27;,
+        project_config=DBT_PROJECT_CONFIG,
+        profile_config=DBT_CONFIG,
+        render_config=RenderConfig(
+            load_method=LoadMode.DBT_LS,
+            select=[&#x27;path:models/report&#x27;]
+        )
+    )</code></pre><p id="5e259c9c-bdb7-4223-824c-7ca60e72d5b1" class="">If you want to try</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="9e8e8cda-9398-44b3-bc6c-cc0aeaf12490" class="code"><code class="language-Bash">astro dev bash
+cd include/dbt
+source dbt_venv/bin/activate
+cd include/dbt 
+dbt run --select path:models/report --profiles-dir /usr/local/airflow/include/dbt/</code></pre></div></li></ul><ul id="0d8bd6f1-6676-4c60-9d0f-24f02ef03741" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">In <code>include/soda/checks/report</code> </span><div class="indented"></div></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="e28b8dcb-4b83-4479-8ec5-b730f5efaff1" class="code"><code class="language-YAML"># report_customer_invoices.yml
+checks for report_customer_invoices:
+  # Check fails if the country column has any missing values
+  - missing_count(country) = 0:
+      name: All customers have a country
+  # Check fails if the total invoices is lower or equal to 0
+  - min(total_invoices):
+      fail: when &lt;= 0</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="b1f763da-8f22-4631-88c4-1c6411e8a85a" class="code"><code class="language-YAML"># report_product_invoices.yml
+checks for report_product_invoices:
+  # Check fails if the stock_code column has any missing values
+  - missing_count(stock_code) = 0:
+      name: All products have a stock code
+  # Check fails if the total quanity sold is lower or equal to 0
+  - min(total_quantity_sold):
+      fail: when &lt;= 0</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="8e3c94a0-2bdc-4da7-8b89-3ec69667e8f2" class="code"><code class="language-YAML"># report_year_invoices.yml
+checks for report_year_invoices:
+  # Check fails if the number of invoices for a year is negative
+  - min(num_invoices):
+      fail: when &lt; 0</code></pre><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="63e50319-3b77-4d34-9b36-bc0e54dacb4f" class="code"><code class="language-Bash">cd /usr/local/airflow
+source /usr/local/airflow/soda_venv/bin/activate
+soda scan -d retail -c include/soda/configuration.yml include/soda/checks/report/*</code></pre><ul id="3897bb7b-da07-4be9-9d46-86a062155068" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Add the final task</span><div class="indented"></div></li></ul><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="2d72c369-07ed-4fd9-95e6-6cf8a984dc03" class="code"><code class="language-Python">@task.external_python(python=&#x27;/usr/local/airflow/soda_venv/bin/python&#x27;)
+    def check_report(scan_name=&#x27;check_report&#x27;, checks_subpath=&#x27;report&#x27;):
+        from include.soda.check_function import check
+
+        return check(scan_name, checks_subpath)</code></pre><p id="905b98fd-b87a-4dd7-acf2-408d46035c30" class="">🥇 Well done! You’ve finished the data pipeline</p><h1 id="627a24e7-5362-46c6-9719-6d05888778f4" class="">Dashboard</h1><p id="973cf3e9-1126-405e-a746-98a8d93c5372" class="">docker-compose.override.yml</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="669dab5e-142e-4c87-bda8-d59b532f9e7e" class="code"><code class="language-Docker" style="white-space:pre-wrap;word-break:break-all">version: &quot;3.1&quot;
+services:
+  metabase:
+    image: metabase/metabase:v0.46.6.4
+    volumes:
+      - ./include/metabase-data:/metabase-data
+    environment:
+      - MB_DB_FILE=/metabase-data/metabase.db
+    ports:
+      - 3000:3000
+    restart: always</code></pre><h3 id="79fe17d6-a285-4269-a8a4-a18754d392f3" class=""></h3></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
