@@ -15,4 +15,14 @@
 * Then we run another dbt model/task to get analytics from the transformed data using dbt
 * Finally we run a data quality check again to make sure that the analytics are correct amd 
   build a dashboard in order to get insights from the data
+
+### Airflow Dag execution
+
+![Architecture](https://github.com/ansel9618/Retail-ETL-Pipeline/blob/main/images/31.0_.png)
+
+### Metabase Dashboard
+
+![Architecture](https://github.com/ansel9618/Retail-ETL-Pipeline/blob/main/images/38.0_.png)
+
+
  
